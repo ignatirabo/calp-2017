@@ -1,0 +1,15 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules main.ml > main.ml.depends
+# Target: counter.mli.depends, tags: { extension:mli, file:counter.mli, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules counter.mli > counter.mli.depends
+# Target: counter.cmi, tags: { byte, compile, extension:mli, file:counter.mli, interf, ocaml, quiet, traverse }
+ocamlc.opt -c -o counter.cmi counter.mli
+# Target: main.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet, traverse }
+ocamlc.opt -c -o main.cmo main.ml
++ ocamlc.opt -c -o main.cmo main.ml
+File "main.ml", line 4, characters 10-23:
+Error: Unbound module CounterF
+Hint: Did you mean Counter?
+Command exited with code 2.
+# Compilation unsuccessful.

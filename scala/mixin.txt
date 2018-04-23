@@ -1,0 +1,49 @@
+# Mixin vs Interface vs Trait
+
+## What's a mixin?
+
+Mixins are traits which are used to compose a class.
+
+```scala
+abstract class A {
+  val message: String
+}
+class B extends A {
+  val message = "I'm an instance of class B"
+}
+trait C extends A {
+  def loudMessage = message.toUpperCase()
+}
+class D extends B with C
+
+val d = new D
+d.message  // I'm an instance of class B
+d.loudMessage  // I'M AN INSTANCE OF CLASS B
+```
+
+## Scala's Mixin vs Java's Interface
+
+Let's say we have a Ship class and a Airport class. But we want to create an AircraftCarrier class, wich is a ship and also an airport.
+
+```class AircraftCarrier extends Airport, Ship // doesn't compile```
+
+But Java supports multiple inheritance on interfaces and allows a class to implement arbitrary many interfaces. So we could create two interfaces: Ship and Airport. But now we have to implement the methods from each interface manually. In a simple case this would be no problem, but when things get more complicated we can't just reimplement everything.
+
+With mixins we only need to implement the trait once, and then:
+
+```scala
+trait Ship {
+  val cargoes : ListBuffer[Cargo]
+
+  def addCargo(c : Cargo){
+    cargoes += c
+  }
+
+  def removeCargo(c : Cargo){
+    cargoes -= c
+  }
+}
+
+class AircraftCarrier with Ship with Airport
+```
+

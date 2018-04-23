@@ -1,0 +1,5 @@
+"Rule: ocaml: mli -> cmi (%=counter )": "\186-:\155\233\197-\011\211\246><\201\164\175\030"
+"Resource: /home/ignacio/Documents/calp/ocaml/modulos/main.ml": "\188p\140Fl\220\209\209\143\190\246\187k\025\140Z"
+"Rule: ocaml dependencies ml (%=main )": "\193\242\240\016\198Tf\138sB\229\198s\224\001x"
+"Rule: ocaml dependencies mli (%=counter )": "o\162\254\172\029\135\r\020\240\216\181g\228[d\031"
+"Resource: /home/ignacio/Documents/calp/ocaml/modulos/counter.mli": "k\176\254r\027\186`#\220\134\233\227I\250\001\129"
